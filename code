@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Control</title>
+  <style>
+    /* CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .device-controls {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .control-panel {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .control-panel h2 {
+      margin-top: 0;
+    }
+    .control-panel label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .control-panel input[type="range"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .control-panel button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .control-panel button:hover {
+      background-color: #0056b3;
+    }
+    .status-message {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Home Control</h1>
+
+    <div class="device-controls">
+      <!-- Fan Lights Control Panel -->
+      <div class="control-panel" id="fanLightsPanel">
+        <h2>Fan Lights Control</h2>
+        <label for="brightness">Brightness:</label>
+        <input type="range" id="brightness" min="0" max="100" value="50">
+        <button id="toggleLights">Toggle Lights</button>
+        <div id="lightsStatus" class="status-message"></div>
+      </div>
+
+      <!-- Other Equipment Control Panel (Example) -->
+      <div class="control-panel" id="otherEquipmentPanel">
+        <h2>Other Equipment Control</h2>
+        <label for="temperature">Temperature:</label>
+        <input type="number" id="temperature" min="16" max="30" value="20">
+        <button id="setTemperature">Set Temperature</button>
+        <div id="temperatureStatus" class="status-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interacting with the API
+    // Replace these dummy API calls with actual API integration
+
+    // Function to toggle fan lights
+    function toggleLights() {
+      // Dummy API call (replace with actual API call)
+      const lightsStatus = Math.random() < 0.5 ? 'on' : 'off';
+      document.getElementById('lightsStatus').textContent = Lights turned ${lightsStatus};
+    }
+
+    // Function to set temperature
+    function setTemperature() {
+      const temperature = document.getElementById('temperature').value;
+      // Dummy API call (replace with actual API call)
+      document.getElementById('temperatureStatus').textContent = Temperature set to ${temperature}°C;
+    }
+
+    // Event listeners for button clicks
+    document.getElementById('toggleLights').addEventListener('click', toggleLights);
+    document.getElementById('setTemperature').addEventListener('click', setTemperature);
+  </script>
+</body>
+</html>
